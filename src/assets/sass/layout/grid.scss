@@ -1,0 +1,81 @@
+@import "../variables";
+body {
+  height: 100vh;
+  margin: 0;
+}
+
+section {
+  padding: 3rem 0;
+}
+
+.container {
+  display: block;
+  width: 60rem;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+.justify-center {
+  justify-content: center;
+}
+
+.justify-start {
+  justify-content: flex-start;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.align-end {
+  align-items: flex-end;
+}
+
+.columns {
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: stretch;
+}
+
+.col {
+  flex: 1;
+}
+
+.col-6 {
+  max-width: 50%;
+  flex-basis: 50%;
+}
+
+.col-12 {
+  max-width: 100%;
+  flex-basis: 100%;
+}
+.col-10 {
+  max-width: 83.33%;
+  flex-basis: 83.33%;
+}
+.col-8 {
+  max-width: 66.66%;
+  flex-basis: 66.66%;
+}
+.col-6 {
+  max-width: 50%;
+  flex-basis: 50%;
+}
+.col-4 {
+  max-width: 33.33%;
+  flex-basis: 33.33%;
+}
+.col-2 {
+  max-width: 16.66%;
+  flex-basis: 16.66%;
+}

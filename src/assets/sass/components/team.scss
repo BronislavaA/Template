@@ -1,0 +1,33 @@
+#team {
+  background: #ffffff;
+
+  h1 {
+    text-align: center;
+    color: #414a4f;
+  }
+
+  hr {
+    width: 100px;
+    border: 1px solid #55acee;
+    margin: 1.25rem auto;
+    text-align: center;
+  }
+
+  .member-card {
+    padding: 1.5rem 1.5rem;
+
+    .card-title {
+      text-align: center;
+
+      h5 {
+        margin-bottom: 0;
+      }
+    }
+    .card-body {
+      p {
+        text-align: justify;
+        color: #414a4f;
+      }
+    }
+  }
+}

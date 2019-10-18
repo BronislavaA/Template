@@ -1,0 +1,83 @@
+//colors
+
+$white: #FFFFFF;
+$grey: #414a4f;
+$blue: #4424D6;
+$orange: #FC600A;
+$green: #B2D732;
+$darkgreen: #2B3409;
+
+//font size settings
+
+$fonts: (
+  'h1' 3rem 1.05,
+  'h2' 2.25rem 1.25,
+  'h3' 1.75rem 1.25,
+  'h4' 1.125rem 1.22,
+  'h5' 1.2rem 1.22,
+  'h6' 1rem 1.375
+);
+
+@each $name, $size, $height in $fonts {
+  #{$name} {
+    font-size: $size;
+    line-height : $height;
+  }
+}
+
+$breakpoints: (
+  small : 30rem,
+  medium: 40rem,
+  large : 64rem
+);
+
+$html-font-sizes: (
+  null : 14px,
+  small : 16px,
+  medium : 18px,
+  large: 20px,
+);
+
+@each $breakpoint, $font-size in $html-font-sizes {
+  @if $breakpoint == null {
+    html {
+      font-size: $font-size;
+      font-size-adjust: 0.5;
+      line-height: 1.5;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+  }
+  @else {
+    // If $fs-font-size is a key that exists in
+    // $fs-breakpoints, use the value
+    @if map-has-key($breakpoints, $breakpoint) {
+      $breakpoint: map-get($breakpoints, $breakpoint);
+    }
+    @media screen and (min-width: $breakpoint) {
+      html {
+        font-size: $font-size;
+        font-size-adjust: 0.5;
+        line-height: 1.5;
+      }
+    }
+  }
+}
+
+// images
+
+$images: (
+  home: 'london.jpg',
+  testimonials: 'nature.jpg',
+);
+
+@mixin background($name) {
+  @each $name, $file in $images {
+    ##{$name} {
+      background-image: url("../images/#{$file}");
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  }
+}

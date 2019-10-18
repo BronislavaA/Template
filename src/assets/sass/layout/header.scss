@@ -1,0 +1,31 @@
+@import "../variables";
+
+#home {
+  position: relative;
+  min-height: 60vh;
+  @include background('hero');
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  h1 {
+    text-align: center;
+    color: white;
+    margin: 0.625rem 0
+  }
+
+  p {
+    text-align: center;
+    color: white;
+  }
+
+  .button {
+    padding: 10px 30px;
+    color: #fff;
+    border-radius: 4px;
+    text-align: center;
+    background-color: #f08645;
+    text-decoration: none;
+    font-weight: bold;
+  }
+}

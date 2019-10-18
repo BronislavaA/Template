@@ -1,148 +1,245 @@
 import React from 'react';
 import logo from '../assets/images/logo.svg';
-import '../assets/sass/Page.scss';
+import '../assets/sass/layout/navigation.scss';
+import '../assets/sass/layout/header.scss';
+import '../assets/sass/layout/grid.scss';
+import '../assets/sass/layout/footer.scss';
+import '../assets/sass/components/feature.scss';
+import '../assets/sass/components/team.scss';
+import '../assets/sass/components/testimonials.scss';
+import '../assets/sass/components/contact.scss';
 import { name, surname, loremIpsum, Avatar } from 'react-lorem-ipsum'
 
 function Page() {
   return (
     <div className="page">
 
-      <nav className='navbar'>
+      <nav id='navigation'>
+        <a className='logo' href='index.html'>
+          <img src={logo} alt="logo"/>
+          Company
+        </a>
+        <ul className='menu'>
+          <li className='menu-item'>
+            <a className='menu-link' href='index.html'>Home</a>
+          </li>
+          <li className='menu-item'>
+            <a className='menu-link' href='#about'>About</a>
+          </li>
+          <li className='menu-item'>
+            <a className='menu-link' href='#features'>Features</a>
+          </li>
+          <li className='menu-item'>
+            <a className='menu-link' href='#contact'>Contact</a>
+          </li>
+        </ul>
+      </nav>
+      <section id='home'>
         <div className='container'>
-          <div className='navbar-logo'>
-            <a className='logo' href='index.html'>
-              <img src={logo} alt="logo"/>
-              Company
-            </a>
-          </div>
-          <div className='navbar-menu'>
-            <ul className='menu'>
-              <li className='menu-item'>
-                <a className='menu-link' href='index.html'>Home</a>
-              </li>
-              <li className='menu-item'>
-                <a className='menu-link' href='#about'>About</a>
-              </li>
-              <li className='menu-item'>
-                <a className='menu-link' href='#features'>Features</a>
-              </li>
-              <li className='menu-item'>
-                <a className='menu-link' href='#contact'>Contact</a>
-              </li>
-            </ul>
+          <div className='columns align-center justify-center'>
+            <h1>Company Name</h1>
+            <p>{loremIpsum({ avgSentencesPerParagraph: 2 })}</p>
+            <a className='button' href='#about'>Learn More</a>
           </div>
         </div>
-      </nav>
-      
-      <div className='hero'>
+      </section>
+      <section id='feature'>
         <div className='container'>
           <div className='row'>
-            <div className='column'>
-              <h1 className='title'>Company Name</h1>
-              <p className='subtitle'>{loremIpsum({ avgSentencesPerParagraph: 2 })}</p>
-              <br></br>
-              <a className='button' href='#about'>Learn More</a>
+            <div className='col'>
+              <h1>Features</h1>
+              <hr></hr>
+              <p>{loremIpsum({ avgSentencesPerParagraph: 3 })}</p>
+            </div>
+          </div>
+          <div className='row'>
+          <div className='col col-6'>
+              <div className='feature-card'>
+                <div className='row'>
+                  <div className='column col-2'>
+                    <div className='feature-icon'>
+                      <i className='material-icons'>house</i>
+                    </div>
+                  </div>
+                  <div className='column col-10'>
+                    <div className='feature-body'>
+                      <h3>Title</h3>
+                      <p>{loremIpsum({ avgSentencesPerParagraph: 2 })}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className='col col-6'>
+              <div className='feature-card'>
+                <div className='row'>
+                  <div className='column col-2'>
+                    <div className='feature-icon'>
+                      <i className='material-icons'>house</i>
+                    </div>
+                  </div>
+                  <div className='column col-10'>
+                    <div className='feature-body'>
+                      <h3>Title</h3>
+                      <p>{loremIpsum({ avgSentencesPerParagraph: 2 })}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className='col col-6'>
+              <div className='feature-card'>
+                <div className='row'>
+                  <div className='column col-2'>
+                    <div className='feature-icon'>
+                      <i className='material-icons'>house</i>
+                    </div>
+                  </div>
+                  <div className='column col-10'>
+                    <div className='feature-body'>
+                      <h3>Title</h3>
+                      <p>{loremIpsum({ avgSentencesPerParagraph: 2 })}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className='col col-6'>
+              <div className='feature-card'>
+                <div className='row'>
+                  <div className='column col-2'>
+                    <div className='feature-icon'>
+                      <i className='material-icons'>house</i>
+                    </div>
+                  </div>
+                  <div className='column col-10'>
+                    <div className='feature-body'>
+                      <h3>Title</h3>
+                      <p>{loremIpsum({ avgSentencesPerParagraph: 2 })}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-
-      <div className='main'>
+      </section>
+      <section id='team'>
         <div className='container'>
-
-          <section>
-            <div className='row'>
-              <div className='column'>
-                <h2 className='title'>Features</h2>
-                <p className='description'>{loremIpsum({ avgSentencesPerParagraph: 4 })}</p>
-              </div>
+          <div className='row'>
+            <div className='col'>
+              <h1>Our Team</h1>
+              <hr></hr>
             </div>
-            <div className='row'>
-              <div className='column'>
-                <div className='feature-card'>
-                  <div className='feature-icon'>
-                    <i className='material-icons'>house</i>
+          </div>
+          <div className='row'>
+            <div className='col col-4'>
+              <div className='member-card'>
+                <div className='columns align-center'>
+                  <Avatar gender="male" className="avatar" width="200" height="200" alt="Avatar" />
+                  <div className='card-title'>
+                    <h5 className='member-name'>{name('male')} {surname()}</h5>
+                    <p className='member-position'>Developer</p>
                   </div>
-                  <h2 className='title'>Title</h2>
-                  <p className='description'>{loremIpsum({ avgSentencesPerParagraph: 3 })}</p>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <section>
-            <h2 className='title'>Our Team</h2>
-            <div className='team'>
-              <div className='row'>
-                <div className='column'>
-                  <div className='team-member'>
-                    <div className='member-card'>
-                      <div className='avatar'></div>
-                      <Avatar gender="male" className="avatar" width="200" height="200" alt="Avatar" />
-                      <div className='card-title'>
-                        <h3 className='member-name'>{name('male')} {surname()}</h3>
-                        <p className='member-position'>Developer</p>
-                      </div>
-                      <div className='card-body'>
-                        <p className='description'></p>
-                      </div>
-                    </div>
+                  <div className='card-body'>
+                    <p className='description'>{loremIpsum({ avgSentencesPerParagraph: 2 })}</p>
                   </div>
                 </div>
               </div>
             </div>
-          </section>
-
-          <section>
-            <div className='row'>
-              <div className='column'>
-                <h2 className='title'>Testimonials</h2>
-                <p className='description'>{loremIpsum({ avgSentencesPerParagraph: 4 })}</p>
+            <div className='col col-4'>
+              <div className='member-card'>
+                <div className='columns align-center'>
+                  <Avatar gender="female" className="avatar" width="200" height="200" alt="Avatar" />
+                  <div className='card-title'>
+                    <h5 className='member-name'>{name('female')} {surname()}</h5>
+                    <p className='member-position'>Designer</p>
+                  </div>
+                  <div className='card-body'>
+                    <p className='description'>{loremIpsum({ avgSentencesPerParagraph: 2 })}</p>
+                  </div>
+                </div>
               </div>
             </div>
-          </section>
-
-          <section>
-            <div className='row'>
-              <div className='column'>
-                <h2 className='title'>Contact Us</h2>
-                <p className='description'>{loremIpsum({ avgSentencesPerParagraph: 4 })}</p>
-                <form className='contact-form'>
-                  <div className='row'>
-                    <div className='column'>
-                      <div className='labeled-input'>
-                        <label></label>
-                        <input></input>
-                      </div>
-                    </div>
-                    <div className='column'>
-                      <div className='labeled-input'>
-                        <label></label>
-                        <input></input>
-                      </div>
-                    </div>
+            <div className='col col-4'>
+              <div className='member-card'>
+                <div className='columns align-center'>
+                  <Avatar gender="male" className="avatar" width="200" height="200" alt="Avatar" />
+                  <div className='card-title'>
+                    <h5 className='member-name'>{name('male')} {surname()}</h5>
+                    <p className='member-position'>Manager</p>
                   </div>
-                  <div className='labeled-input'>
-                    <label></label>
-                    <textarea></textarea>
+                  <div className='card-body'>
+                    <p className='description'>{loremIpsum({ avgSentencesPerParagraph: 2 })}</p>
                   </div>
-                  <div className='row'>
-                    <div className='column'>
-                      <button className='contact-submit'>Send</button>
-                    </div>
-                  </div>
-                </form>
+                </div>
               </div>
             </div>
-          </section>
-
+          </div>
         </div>
-      </div>
-
+      </section>
+      <section id='testimonials'>
+        <div className='container'>
+          <div className='row'>
+            <div className='col'>
+              <h1>Testimonials</h1>
+              <p className='description'>{loremIpsum({ avgSentencesPerParagraph: 4 })}</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id='contact'>
+        <div className='container'>
+          <div className='row'>
+            <div className='col'>
+              <h1>Contact Us</h1>
+              <hr></hr>
+              <p className='description'>{loremIpsum({ avgSentencesPerParagraph: 4 })}</p>
+            </div>
+          </div>
+          <div className='row justify-center'>
+            <form className='contact-form col col-8'>
+              <div className='row'>
+                <div className='col col-6'>
+                  <div className='labeled-input'>
+                    <div className='columns justify-start'>
+                      <label>Your Name</label>
+                      <input type='text'></input>
+                    </div>
+                  </div>
+                </div>
+                <div className='col col-6'>
+                  <div className='labeled-input'>
+                    <div className='columns justify-start'>
+                      <label>Your Email</label>
+                      <input type='email'></input>
+                    </div>
+                  </div>
+                </div>
+                <div className='col col-12'>
+                  <div className='labeled-input'>
+                    <div className='columns justify-start'>
+                      <label for='message'>Your Message</label>
+                      <textarea id='message' type='text'></textarea>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className='columns align-end'>
+                <div className='submit-button'>
+                  <button type='submit'>Send</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
       <footer>
         <div className='container'>
-          <div className='copyright'>
-            <p>Copyright © All rights reserved</p>
+          <div className='columns justify-center'>
+            <div className='copyright'>
+              <p>Copyright © All rights reserved</p>
+            </div>
           </div>
         </div>
       </footer>

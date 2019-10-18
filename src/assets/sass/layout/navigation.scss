@@ -1,0 +1,35 @@
+#navigation {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  position: fixed;
+  background-color: #00000082;
+  color: white;
+  z-index: 1;
+
+  .logo {
+    display: flex;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+
+    img {
+      width: 60px;
+      height: 60px;
+    }
+  }
+  .menu {
+    display: flex;
+    list-style: none;
+
+    .menu-item {
+      margin: 0 15px;
+
+      .menu-link {
+        color: white;
+        text-decoration: none;
+      }
+    }
+  }
+}
