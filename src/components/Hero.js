@@ -2,6 +2,7 @@ import React from 'react';
 import Button from './Button'
 
 export default function Hero({title, subtitle}) {
+
   return (
     <section id='home'>
       <div className='container'>

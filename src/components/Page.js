@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Navbar from './Navbar';
 import Hero from './Hero';
 import SectionFeature from './SectionFeature';
@@ -14,36 +14,47 @@ import '../assets/sass/components/feature.scss';
 import '../assets/sass/components/team.scss';
 import '../assets/sass/components/testimonials.scss';
 import '../assets/sass/components/contact.scss';
-import { loremIpsum } from 'react-lorem-ipsum'
+import { loremIpsum } from 'react-lorem-ipsum';
 
-function Page() {
+export default function Page() {
+  useEffect(() => {
+    const nav = document.getElementById('navigation')
+    const hero = document.getElementById('home')
+    const transparent = hero.clientHeight
+    console.log(transparent)
+    const scrollListener = window.addEventListener("scroll", () => {
+      if (window.pageYOffset > transparent) {
+        nav.classList.add('black')
+      } else {
+        nav.classList.remove('black')
+      }
+    })
+    return () => {
+      window.removeEventListener('scroll', scrollListener)
+    }
+  }, [])
   return (
     <div className="page">
-
       <Navbar />
       <Hero
-      title='Company Name'
-      subtitle={loremIpsum({ avgSentencesPerParagraph: 2 })}
+        title='Company Name'
+        subtitle={loremIpsum({ avgSentencesPerParagraph: 2 })}
       />
       <SectionFeature
-      title='Feature'
-      subtitle={loremIpsum({ avgSentencesPerParagraph: 3 })}
+        title='Feature'
+        subtitle={loremIpsum({ avgSentencesPerParagraph: 3 })}
       />
       <SectionTeam
-      title='Our Team'
+        title='Our Team'
       />
       <SectionTestimonials
-      title='Testimonials'
+        title='Testimonials'
       />
       <SectionContact
-      title='Contact Us'
-      subtitle={loremIpsum({ avgSentencesPerParagraph: 4 })}
+        title='Contact Us'
+        subtitle={loremIpsum({ avgSentencesPerParagraph: 4 })}
       />
-      
       <Footer />
-
     </div>
-  );
+  )
 }
-
-export default Page;
